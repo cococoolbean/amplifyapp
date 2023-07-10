@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "@aws-amplify/ui-react/styles.css";
 import {
@@ -7,14 +8,54 @@ import {
   Image,
   View,
   Card,
+  TextField,
 } from "@aws-amplify/ui-react";
 
 function App({ signOut }) {
+  const [num1, setNum1] = useState("");
+  const [num2, setNum2] = useState("");
+  const [result, setResult] = useState(null);
+
+  const handleMultiply = async () => {
+    const requestBody = {
+      num1: Number(num1),
+      num2: Number(num2),
+    };
+
+    /* async operation to call multiply API */
+    const response = await fetch("https://your-api-gateway-url/multiply", {
+      method: "POST",
+      body: JSON.stringify(requestBody),
+    });
+
+    const data = await response.json();
+
+    setResult(data.result);
+  };
+
   return (
     <View className="App">
       <Card>
         <Image src={logo} className="App-logo" alt="logo" />
         <Heading level={1}>We now have Auth!</Heading>
+
+        <Heading level={3}>Multiply two numbers</Heading>
+        <TextField
+          label="Number 1"
+          value={num1}
+          onChange={(event) => setNum1(event.target.value)}
+        />
+        <TextField
+          label="Number 2"
+          value={num2}
+          onChange={(event) => setNum2(event.target.value)}
+        />
+        <Button onClick={handleMultiply}>Multiply</Button>
+        {result !== null && (
+          <Heading level={3}>
+            Result: {num1} x {num2} = {result}
+          </Heading>
+        )}
       </Card>
       <Button onClick={signOut}>Sign Out</Button>
     </View>
