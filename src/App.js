@@ -31,18 +31,24 @@ function App({ signOut }) {
     /* async operation to call multiply API */
     const response = await fetch("https://6isewmqh2d.execute-api.ap-southeast-1.amazonaws.com/beta/multiply", {
       method: "POST",
+
+      // pass the JWT token as the Authorization header -- for api gateway to recognize that this is a valid request / authenticated user
       headers: {
         'Authorization': token,
         'Content-Type': 'application/json'
       },
+
       body: JSON.stringify(requestBody),
     });
 
-    const data = await response.json();
+    // api gateway will invoke lambda function and return the response
+
+    const data = await response.json(); // wait for the response from the API 
 
     setResult(data.result);
   };
 
+  // displaying on screen 
   return (
     <View className="App">
       <Card>
