@@ -17,29 +17,29 @@ function App({ signOut }) {
   const [num2, setNum2] = useState("");
   const [result, setResult] = useState(null);
 
-  const handleMultiply = async () => {
-    const requestBody = {
-      num1: Number(num1),
-      num2: Number(num2),
-    };
+const handleMultiply = async () => {
+  const requestBody = {
+    num1: Number(num1),
+    num2: Number(num2),
+  };
 
-    // get the current session
-    const session = await Auth.currentSession();
-    // get the JWT token
-    const token = session.getIdToken().getJwtToken();
+  // get the current session
+  const session = await Auth.currentSession();
+  // get the JWT token
+  const token = session.getIdToken().getJwtToken();
 
-    /* async operation to call multiply API */
-    const response = await fetch("https://6isewmqh2d.execute-api.ap-southeast-1.amazonaws.com/beta/multiply", {
-      method: "POST",
+  /* async operation to call multiply API */
+  const response = await fetch("https://6isewmqh2d.execute-api.ap-southeast-1.amazonaws.com/beta/multiply", {
+    method: "POST",
 
-      // pass the JWT token as the Authorization header -- for api gateway to recognize that this is a valid request / authenticated user
-      headers: {
-        'Authorization': token,
-        'Content-Type': 'application/json'
-      },
+    // pass the JWT token as the Authorization header -- for API Gateway to recognize that this is a valid request from an authenticated user
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    },
 
-      body: JSON.stringify(requestBody),
-    });
+    body: JSON.stringify(requestBody),
+  });
 
     // api gateway will invoke lambda function and return the response
 
