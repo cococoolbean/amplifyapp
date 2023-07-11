@@ -23,7 +23,7 @@ function App({ signOut }) {
     };
 
     /* async operation to call multiply API */
-    const response = await fetch("https://your-api-gateway-url/multiply", {
+    const response = await fetch("https://6isewmqh2d.execute-api.ap-southeast-1.amazonaws.com/beta/multiply", {
       method: "POST",
       body: JSON.stringify(requestBody),
     });
