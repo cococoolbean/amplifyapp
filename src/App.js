@@ -10,6 +10,7 @@ import {
   Card,
   TextField,
 } from "@aws-amplify/ui-react";
+import { Auth } from 'aws-amplify';
 
 function App({ signOut }) {
   const [num1, setNum1] = useState("");
@@ -22,9 +23,18 @@ function App({ signOut }) {
       num2: Number(num2),
     };
 
+    // get the current session
+    const session = await Auth.currentSession();
+    // get the JWT token
+    const token = session.getIdToken().getJwtToken();
+
     /* async operation to call multiply API */
     const response = await fetch("https://6isewmqh2d.execute-api.ap-southeast-1.amazonaws.com/beta/multiply", {
       method: "POST",
+      headers: {
+        'Authorization': token,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(requestBody),
     });
 
