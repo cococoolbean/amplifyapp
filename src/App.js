@@ -34,7 +34,7 @@ const handleMultiply = async () => {
 
     // pass the JWT token as the Authorization header -- for API Gateway to recognize that this is a valid request from an authenticated user
     headers: {
-      'Authorization': `Bearer ${token}`,
+      'Authorization': `${token}`,
       'Content-Type': 'application/json'
     },
 
