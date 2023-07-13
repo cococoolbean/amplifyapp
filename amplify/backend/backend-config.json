@@ -1,5 +1,16 @@
 {
-  "api": {},
+  "api": {
+    "plugins": {
+        "awsAPIPlugin": {
+            "[API NAME]": {
+                "endpointType": "REST",
+                "endpoint": "https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev",
+                "region": "app-southeast-1",
+                "authorizationType": "NONE",
+            }
+        }
+    }
+  },
   "auth": {
     "amplifyapp4a22c119": {
       "customAuth": false,
