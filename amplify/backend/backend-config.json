@@ -15,8 +15,7 @@
       "service": "API Gateway"
     },
     "plugins": {
-      "awsAPIPlugin": {
-      }
+      "awsAPIPlugin": {}
     }
   },
   "auth": {
