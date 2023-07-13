@@ -30,7 +30,7 @@ const handleMultiply = async () => {
   // const token = session.getIdToken().getJwtToken();
 
   /* async operation to call multiply API */
-  API.post('multiplier', 'https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev')
+  API.post('multiplier', '')
   .then(response => {
     console.log(response);
     setResult(response.json.result);
