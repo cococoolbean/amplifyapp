@@ -12,7 +12,24 @@ import {
 } from "@aws-amplify/ui-react";
 import { Auth } from 'aws-amplify';
 import { API } from 'aws-amplify';
-
+Amplify.configure({
+  //Auth is the same as before
+  Auth: {
+    region: "us-east-1",
+    userPoolId: "us-east-1_T2ZfRqx59",
+    userPoolWebClientId: "61l5lp494qnb60ek6h0ohonspp",
+  },
+  // Add in our new API, "name" can be whatever we want
+  API: {
+    endpoints: [
+      {
+        name: "multiplier",
+        endpoint:
+          "https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev",
+      },
+    ],
+  },
+});
 function App({ signOut }) {
   const [num1, setNum1] = useState("");
   const [num2, setNum2] = useState("");
@@ -30,7 +47,7 @@ const handleMultiply = async () => {
   // const token = session.getIdToken().getJwtToken();
 
   /* async operation to call multiply API */
-  API.post('multiplier', '')
+  const data=API.post('multiplier', '')
   .then(response => {
     console.log(response);
     setResult(response.json.result);
@@ -38,7 +55,7 @@ const handleMultiply = async () => {
   .catch(error => {
     console.error(error);
   });
-
+console.log(data)
 
     // api gateway will invoke lambda function and return the response
 
