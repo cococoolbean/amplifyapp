@@ -1,14 +1,14 @@
 {
   "api": {
     "plugins": {
-        "awsAPIPlugin": {
-            "[API NAME]": {
-                "endpointType": "REST",
-                "endpoint": "https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev",
-                "region": "app-southeast-1",
-                "authorizationType": "NONE",
-            }
+      "awsAPIPlugin": {
+        "[API NAME]": {
+          "authorizationType": "NONE",
+          "endpoint": "https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev",
+          "endpointType": "REST",
+          "region": "app-southeast-1"
         }
+      }
     }
   },
   "auth": {

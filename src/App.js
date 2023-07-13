@@ -11,6 +11,7 @@ import {
   TextField,
 } from "@aws-amplify/ui-react";
 import { Auth } from 'aws-amplify';
+import { API } from 'aws-amplify';
 
 function App({ signOut }) {
   const [num1, setNum1] = useState("");
@@ -29,23 +30,20 @@ const handleMultiply = async () => {
   // const token = session.getIdToken().getJwtToken();
 
   /* async operation to call multiply API */
-  const response = await fetch("https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev", { 
-    method: "POST",
+  API.post('multiplier', 'https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev')
+  .then(response => {
+    console.log(response);
+    setResult(response.json.result);
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
-  //   // pass the JWT token as the Authorization header -- for API Gateway to recognize that this is a valid request from an authenticated user
-  //   headers: {
-  //     'Authorization': `${token}`,
-  //     'Content-Type': 'application/json'
-  //   },
-
-  //   body: JSON.stringify(requestBody),
-    });
 
     // api gateway will invoke lambda function and return the response
 
-    const data = await response.json(); // wait for the response from the API 
 
-    setResult(data.result);
+    
   };
 
   // displaying on screen 
