@@ -24,13 +24,17 @@ const handleMultiply = async () => {
   };
 
   // get the current session
-  // const session = await Auth.currentSession();
+  const session = await Auth.currentSession();
   // // get the JWT token
-  // const token = session.getIdToken().getJwtToken();
+  const token = session.getIdToken().getJwtToken();
 
   /* async operation to call multiply API */
-
-  const response = await API.get('multiplierAPI', '/');
+  const apiOptions = {
+    headers: {
+      Authorization: token
+    }
+  };
+  const response = await API.get('multiplierAPI', '/',apiOptions);
   console.log(response);
   setResult(response.json.result);
 
