@@ -24,22 +24,22 @@ const handleMultiply = async () => {
   };
 
   // get the current session
-  const session = await Auth.currentSession();
-  // get the JWT token
-  const token = session.getIdToken().getJwtToken();
+  // const session = await Auth.currentSession();
+  // // get the JWT token
+  // const token = session.getIdToken().getJwtToken();
 
   /* async operation to call multiply API */
   const response = await fetch("https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev", { 
     method: "POST",
 
-    // pass the JWT token as the Authorization header -- for API Gateway to recognize that this is a valid request from an authenticated user
-    headers: {
-      'Authorization': `${token}`,
-      'Content-Type': 'application/json'
-    },
+  //   // pass the JWT token as the Authorization header -- for API Gateway to recognize that this is a valid request from an authenticated user
+  //   headers: {
+  //     'Authorization': `${token}`,
+  //     'Content-Type': 'application/json'
+  //   },
 
-    body: JSON.stringify(requestBody),
-  });
+  //   body: JSON.stringify(requestBody),
+    });
 
     // api gateway will invoke lambda function and return the response
 
