@@ -34,8 +34,6 @@ const handleMultiply = async () => {
   console.log(response);
   setResult(response.json.result);
 
-console.log(data)
-
     // api gateway will invoke lambda function and return the response
 
 
