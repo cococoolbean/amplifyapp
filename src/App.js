@@ -29,7 +29,7 @@ const handleMultiply = async () => {
   const token = session.getIdToken().getJwtToken();
 
   /* async operation to call multiply API */
-  const response = await fetch("https://5sswbcsrv2.execute-api.ap-southeast-1.amazonaws.com/stage/multiply", { 
+  const response = await fetch("https://4b39guzzz0.execute-api.ap-southeast-1.amazonaws.com/dev", { 
     method: "POST",
 
     // pass the JWT token as the Authorization header -- for API Gateway to recognize that this is a valid request from an authenticated user
