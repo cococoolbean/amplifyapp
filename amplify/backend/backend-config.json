@@ -1,5 +1,19 @@
 {
   "api": {
+    "multiplierAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "multiplier"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "plugins": {
       "awsAPIPlugin": {
         "multiplier": {
@@ -40,26 +54,26 @@
     }
   },
   "function": {
-    "userlambda": {
+    "multiplier": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_userlambda_deploymentBucketName": {
+    "AMPLIFY_function_multiplier_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "userlambda"
+          "resourceName": "multiplier"
         }
       ]
     },
-    "AMPLIFY_function_userlambda_s3Key": {
+    "AMPLIFY_function_multiplier_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "userlambda"
+          "resourceName": "multiplier"
         }
       ]
     }

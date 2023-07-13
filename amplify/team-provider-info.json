@@ -17,10 +17,13 @@
         "amplifyapp4a22c119": {}
       },
       "function": {
-        "userlambda": {
+        "multiplier": {
           "deploymentBucketName": "amplify-amplifyapp-backend-40458-deployment",
-          "s3Key": "amplify-builds/userlambda-6b73443270306357336e-build.zip"
+          "s3Key": "amplify-builds/multiplier-4a43436364614f574374-build.zip"
         }
+      },
+      "api": {
+        "multiplierAPI": {}
       }
     }
   },
