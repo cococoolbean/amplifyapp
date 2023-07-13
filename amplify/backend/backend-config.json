@@ -1,20 +1,5 @@
 {
-  "api": {
-    "api857c85bd": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "userlambda"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    }
-  },
+  "api": {},
   "auth": {
     "amplifyapp4a22c119": {
       "customAuth": false,
