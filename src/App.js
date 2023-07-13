@@ -31,8 +31,10 @@ const handleMultiply = async () => {
   /* async operation to call multiply API */
   const apiOptions = {
     headers: {
-      Authorization: token
-    }
+      Authorization: `Bearer ${(await Auth.currentSession())
+        .getIdToken()
+        .getJwtToken()}`,
+    },
   };
   const response = await API.get('multiplierAPI', '/',apiOptions);
   console.log(response);
