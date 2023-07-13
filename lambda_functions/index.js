@@ -30,9 +30,15 @@ exports.handler = async (event, context) => {
         };
     }
 
-    // Return the result
-    return {
+    const response = {
         statusCode: 200,
-        body: JSON.stringify({ result }),
+        headers: {
+    "Access-Control-Allow-Headers": 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+    "Access-Control-Allow-Methods": '*',
+    "Access-Control-Allow-Origin": '*'
+},
+        body: JSON.stringify('Hello from Lambda!'),
     };
+    return response;
+  
 };
