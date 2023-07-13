@@ -30,7 +30,7 @@ const handleMultiply = async () => {
 
   /* async operation to call multiply API */
 
-  const response = await API.get('multiplier', '/');
+  const response = await API.get('multiplierAPI', '/');
   console.log(response);
   setResult(response.json.result);
 
