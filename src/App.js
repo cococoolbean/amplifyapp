@@ -27,7 +27,7 @@ const handleMultiply = async () => {
   const session = await Auth.currentSession();
   // // get the JWT token
   const token = session.getIdToken().getJwtToken();
-
+  console.log(token)
   /* async operation to call multiply API */
   const apiOptions = {
     headers: {
