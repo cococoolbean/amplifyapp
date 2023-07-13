@@ -29,12 +29,11 @@ const handleMultiply = async () => {
   // const token = session.getIdToken().getJwtToken();
 
   /* async operation to call multiply API */
-  const data=API.get('multiplier', '')
-  .then(response => {
-    console.log(response);
-    setResult(response.json.result);
-  })
- 
+
+  const response = await API.get('multiplier', '/');
+  console.log(response);
+  setResult(response.json.result);
+
 console.log(data)
 
     // api gateway will invoke lambda function and return the response
