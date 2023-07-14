@@ -19,7 +19,7 @@
       "function": {
         "multiplier": {
           "deploymentBucketName": "amplify-amplifyapp-backend-40458-deployment",
-          "s3Key": "amplify-builds/multiplier-4a43436364614f574374-build.zip"
+          "s3Key": "amplify-builds/multiplier-456d7278537442384762-build.zip"
         },
         "dividelambda": {
           "deploymentBucketName": "amplify-amplifyapp-backend-40458-deployment",
