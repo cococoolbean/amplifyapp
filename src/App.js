@@ -37,7 +37,7 @@ const handleMultiply = async () => {
     },
   };
   console.log("divideapi")
-  const response = await API.post('divideapi', '/');
+  const response = await API.post('divideapi', '/',apiOptions);
   console.log(response);
   /*setResult(response.json.result);*/
 
