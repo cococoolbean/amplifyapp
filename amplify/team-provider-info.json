@@ -23,7 +23,7 @@
         },
         "dividelambda": {
           "deploymentBucketName": "amplify-amplifyapp-backend-40458-deployment",
-          "s3Key": "amplify-builds/dividelambda-656d686d367137633671-build.zip"
+          "s3Key": "amplify-builds/dividelambda-5836753164363563526d-build.zip"
         }
       },
       "api": {
