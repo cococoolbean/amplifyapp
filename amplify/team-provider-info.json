@@ -20,10 +20,15 @@
         "multiplier": {
           "deploymentBucketName": "amplify-amplifyapp-backend-40458-deployment",
           "s3Key": "amplify-builds/multiplier-4a43436364614f574374-build.zip"
+        },
+        "dividelambda": {
+          "deploymentBucketName": "amplify-amplifyapp-backend-40458-deployment",
+          "s3Key": "amplify-builds/dividelambda-74676e48736335447342-build.zip"
         }
       },
       "api": {
-        "multiplierAPI": {}
+        "multiplierAPI": {},
+        "divideapi": {}
       }
     }
   },

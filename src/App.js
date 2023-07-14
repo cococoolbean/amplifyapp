@@ -36,7 +36,7 @@ const handleMultiply = async () => {
         .getJwtToken()}`,
     },
   };
-  const response = await API.post('multiplierAPI', '');
+  const response = await API.post('divideapi', '/');
   console.log(response);
   setResult(response.json.result);
 

@@ -1,5 +1,19 @@
 {
   "api": {
+    "divideapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "dividelambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "multiplierAPI": {
       "dependsOn": [
         {
@@ -47,6 +61,11 @@
     }
   },
   "function": {
+    "dividelambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "multiplier": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -54,6 +73,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_dividelambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dividelambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_dividelambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dividelambda"
+        }
+      ]
+    },
     "AMPLIFY_function_multiplier_deploymentBucketName": {
       "usedBy": [
         {

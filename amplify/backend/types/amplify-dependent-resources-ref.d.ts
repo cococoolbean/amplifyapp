@@ -1,5 +1,10 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
+    "divideapi": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
+    },
     "multiplierAPI": {
       "ApiId": "string",
       "ApiName": "string",
@@ -18,6 +23,13 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
+    "dividelambda": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "multiplier": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
