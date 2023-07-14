@@ -28,7 +28,8 @@
       },
       "api": {
         "multiplierAPI": {},
-        "divideapi": {}
+        "divideapi": {},
+        "subapi": {}
       }
     }
   },
