@@ -24,9 +24,6 @@ const handleMultiply = async () => {
   const requestInfo={
     Headers:{
       Authorization: token,
-      "Access-Control-Allow-Headers" : 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
-      "Access-Control-Allow-Origin": '*',
-      "Access-Control-Allow-Methods": '*'
 
     },
     body:{
@@ -34,8 +31,8 @@ const handleMultiply = async () => {
       num2: Number(num2),
     }
   }
-  console.log("subapi")
-  const response = await API.get('addapi', '/');
+  console.log("addapi")
+  const response = await API.get('addapi', '/',requestInfo);
   console.log({response});
     
   };
