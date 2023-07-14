@@ -38,7 +38,7 @@ const handleMultiply = async () => {
   };
   const response = await API.post('divideapi', '/');
   console.log(response);
-  setResult(response.json.result);
+  /*setResult(response.json.result);*/
 
     // api gateway will invoke lambda function and return the response
 
