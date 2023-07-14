@@ -36,7 +36,7 @@ const handleMultiply = async () => {
         .getJwtToken()}`,
     },
   };
-  const response = await API.post('multiplierAPI', '',apiOptions);
+  const response = await API.post('multiplierAPI', '');
   console.log(response);
   setResult(response.json.result);
 
