@@ -18,11 +18,21 @@ function App({ signOut }) {
   const [result, setResult] = useState(null);
 
 const handleMultiply = async () => {
-  const requestBody = {
-    num1: Number(num1),
-    num2: Number(num2),
-  };
+  const user = await Auth.currentAuthenticatedUser()
+  const token=user.signInUserSession.idToken.jwtToken
+  console.log(token)
+  const requestInfo={
+    headers:{
+      Authorization: token
+    },
+    body:{
+      num1: Number(num1),
+      num2: Number(num2),
+    }
+  }
+  const data=await API.get('divideapi','/',requestInfo)
 
+  console.log({data})
     
   };
 

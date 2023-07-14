@@ -2,6 +2,9 @@ const { Client } = require('pg');
 
 const handler = async (event) => {
     // check if numbers are provided and are actually numbers
+    if(event.requestContext.authorizer){
+      console.log(event.requestContext.authorizer.claims)
+    }
     if (!('num1' in event) || !('num2' in event) || isNaN(event.num1) || isNaN(event.num2)) {
         return {
             statusCode: 400,
