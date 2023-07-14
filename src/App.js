@@ -34,7 +34,8 @@ const handleMultiply = async () => {
       num2: Number(num2),
     }
   }
-  const response = await API.get('subapi', '/');
+  console.log("subapi")
+  const response = await API.get('addapi', '/');
   console.log({response});
     
   };

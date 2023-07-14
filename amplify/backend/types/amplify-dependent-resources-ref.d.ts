@@ -1,5 +1,10 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
+    "addapi": {
+      "ApiId": "string",
+      "ApiName": "string",
+      "RootUrl": "string"
+    },
     "divideapi": {
       "ApiId": "string",
       "ApiName": "string",
@@ -28,6 +33,13 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
+    "addlambda": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "dividelambda": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
