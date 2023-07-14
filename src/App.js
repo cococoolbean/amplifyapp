@@ -30,8 +30,8 @@ const handleMultiply = async () => {
       num2: Number(num2),
     }
   }
-  const data=await API.post('divideapi',' ')
-
+  const response = await API.get('divideapi', '/');
+  console.log({response});
   console.log({data})
     
   };
