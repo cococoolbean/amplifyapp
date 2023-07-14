@@ -32,7 +32,7 @@ const handleMultiply = async () => {
   const apiOptions = {
     headers: {
       "Access-Control-Allow-Origin": "*",
-      Authorization: `Bearer ${(await Auth.currentSession())
+      "Authorization": `Bearer ${(await Auth.currentSession())
         .getIdToken()
         .getJwtToken()}`,
     },
