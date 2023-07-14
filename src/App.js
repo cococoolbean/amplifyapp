@@ -31,6 +31,7 @@ const handleMultiply = async () => {
   /* async operation to call multiply API */
   const apiOptions = {
     headers: {
+      "Access-Control-Allow-Origin": "*",
       Authorization: `Bearer ${(await Auth.currentSession())
         .getIdToken()
         .getJwtToken()}`,
