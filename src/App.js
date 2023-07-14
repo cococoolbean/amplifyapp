@@ -23,7 +23,11 @@ const handleMultiply = async () => {
   console.log(token)
   const requestInfo={
     headers:{
-      Authorization: token
+      Authorization: token,
+      "Access-Control-Allow-Headers" : 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+      "Access-Control-Allow-Origin": '*',
+      "Access-Control-Allow-Methods": '*'
+
     },
     body:{
       num1: Number(num1),
