@@ -22,7 +22,7 @@ const handleMultiply = async () => {
   const token=user.signInUserSession.idToken.jwtToken
   console.log(token)
   const requestInfo={
-    headers:{
+    Headers:{
       Authorization: token,
       "Access-Control-Allow-Headers" : 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
       "Access-Control-Allow-Origin": '*',
@@ -34,7 +34,7 @@ const handleMultiply = async () => {
       num2: Number(num2),
     }
   }
-  const response = await API.get('divideapi', '/');
+  const response = await API.get('subapi', '/');
   console.log({response});
     
   };
