@@ -11,5 +11,13 @@ const server = awsServerlessExpress.createServer(app);
  */
 exports.handler = (event, context) => {
   console.log(`EVENT: ${JSON.stringify(event)}`);
-  return awsServerlessExpress.proxy(server, event, context, 'PROMISE').promise;
+   const response = {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+      },
+      body: JSON.stringify({ "message": "Hello World!" })
+    };
+  return response;
 };

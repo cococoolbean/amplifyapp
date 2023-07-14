@@ -46,7 +46,14 @@ app.get('//*', function(req, res) {
 
 app.post('/', function(req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  const response = {
+    headers: {
+      "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+      "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+    }
+  };
+ 
+  res.json({success: 'post call succeed!', header:response,url: req.url, body: req.body})
 });
 
 app.post('//*', function(req, res) {
