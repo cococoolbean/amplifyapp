@@ -32,7 +32,6 @@ const handleMultiply = async () => {
   }
   const response = await API.get('divideapi', '/');
   console.log({response});
-  console.log({data})
     
   };
 
