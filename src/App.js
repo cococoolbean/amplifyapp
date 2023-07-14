@@ -27,19 +27,15 @@ const handleMultiply = async () => {
   const session = await Auth.currentSession();
   // // get the JWT token
   const token = session.getIdToken().getJwtToken();
-  console.log(token)
+  console.log({token})
   /* async operation to call multiply API */
   const apiOptions = {
     headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Authorization": `Bearer ${(await Auth.currentSession())
-        .getIdToken()
-        .getJwtToken()}`,
-    },
+      Authorization: token},
   };
   console.log("divideapi")
   const response = await API.post('divideapi', '/',apiOptions);
-  console.log(response);
+  console.log({response});
   /*setResult(response.json.result);*/
 
     // api gateway will invoke lambda function and return the response
