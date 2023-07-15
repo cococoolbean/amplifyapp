@@ -1,19 +1,5 @@
 {
   "api": {
-    "addapi": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "addlambda"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    },
     "divideapi": {
       "dependsOn": [
         {
@@ -44,20 +30,6 @@
     },
     "plugins": {
       "awsAPIPlugin": {}
-    },
-    "subapi": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "dividelambda"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
     }
   },
   "auth": {
@@ -89,11 +61,6 @@
     }
   },
   "function": {
-    "addlambda": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "dividelambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -106,22 +73,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_addlambda_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "addlambda"
-        }
-      ]
-    },
-    "AMPLIFY_function_addlambda_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "addlambda"
-        }
-      ]
-    },
     "AMPLIFY_function_dividelambda_deploymentBucketName": {
       "usedBy": [
         {
