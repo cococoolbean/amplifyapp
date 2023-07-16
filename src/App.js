@@ -32,7 +32,7 @@ const handleMultiply = async () => {
     }
   }
   console.log("addapi")
-  const response = await API.get('divideapi', '/');
+  const response = await API.post('divideapi', '/',requestInfo);
   console.log({response});
     
   };
