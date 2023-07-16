@@ -41,8 +41,7 @@ const handleMultiply = async () => {
  
   const response = await fetch("https://wuzx3h67tj.execute-api.ap-southeast-1.amazonaws.com/backend", { 
     method: "POST",
-
-    Headers:{
+    headers:{
       Authorization: token
 
     },
@@ -50,10 +49,16 @@ const handleMultiply = async () => {
     });
 
     // api gateway will invoke lambda function and return the response
+    try {
 
-    const data = await response.json(); // wait for the response from the API 
-
+    const data = await response.json(); // wait for the response from the API
     setResult(data.result);
+ 
+    }
+    catch (e) {
+      return e;
+  }    
+
   };
   // displaying on screen 
   return (
