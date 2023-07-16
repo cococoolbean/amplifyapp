@@ -53,7 +53,7 @@ const handleMultiply = async () => {
 
     const data = await response.json(); // wait for the response from the API
     console.log(data)
-    setResult(data.result);
+    setResult(data.body);
  
     }
     catch (e) {
