@@ -21,18 +21,23 @@ const handleMultiply = async () => {
   const user = await Auth.currentAuthenticatedUser()
   const token=user.signInUserSession.idToken.jwtToken
   console.log(token)
-  const requestInfo={
-    Headers:{
-      Authorization: `Bearer ${(await Auth.currentSession())
-        .getIdToken()
-        .getJwtToken()}`,
+  // const requestInfo={
+  //   Headers:{
+  //     Authorization: `Bearer ${(await Auth.currentSession())
+  //       .getIdToken()
+  //       .getJwtToken()}`,
 
-    },
-    body:{
-      num1: Number(num1),
-      num2: Number(num2),
-    }
-  }
+  //   },
+  //   body:{
+  //     num1: Number(num1),
+  //     num2: Number(num2),
+  //   }
+  // }
+  const requestBody = {
+    num1: Number(num1),
+    num2: Number(num2),
+  };
+
  
   const response = await fetch("https://wuzx3h67tj.execute-api.ap-southeast-1.amazonaws.com/backend", { 
     method: "POST",
