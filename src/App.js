@@ -23,7 +23,9 @@ const handleMultiply = async () => {
   console.log(token)
   const requestInfo={
     Headers:{
-      Authorization: token,
+      Authorization: `Bearer ${(await Auth.currentSession())
+        .getIdToken()
+        .getJwtToken()}`,
 
     },
     body:{
@@ -31,12 +33,25 @@ const handleMultiply = async () => {
       num2: Number(num2),
     }
   }
-  console.log("addapi")
-  const response = await API.post('divideapi', '/',requestInfo);
-  console.log({response});
-    
-  };
+ 
+  const response = await fetch("https://wuzx3h67tj.execute-api.ap-southeast-1.amazonaws.com/backend", { 
+    method: "POST",
 
+    Headers:{
+      Authorization: `Bearer ${(await Auth.currentSession())
+        .getIdToken()
+        .getJwtToken()}`
+
+    },
+     body: JSON.stringify(requestBody),
+    });
+
+    // api gateway will invoke lambda function and return the response
+
+    const data = await response.json(); // wait for the response from the API 
+
+    setResult(data.result);
+  };
   // displaying on screen 
   return (
     <View className="App">
