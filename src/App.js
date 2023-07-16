@@ -43,9 +43,7 @@ const handleMultiply = async () => {
     method: "POST",
 
     Headers:{
-      Authorization: `Bearer ${(await Auth.currentSession())
-        .getIdToken()
-        .getJwtToken()}`
+      Authorization: token
 
     },
      body: JSON.stringify(requestBody),
